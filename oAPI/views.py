@@ -1,7 +1,13 @@
 from django.shortcuts import render
-from django.shortcuts import HttpResponse
 from django.contrib.admin.views.decorators import staff_member_required
+from rest_framework import viewsets, permissions
+from .models import MemberData
+from .serialozers import MemberDataSerializer
 
+class MemberDataView(viewsets.ModelViewSet):
+    queryset = MemberData.objects.all()
+    serializer_class = MemberDataSerializer
+    # permission_classes = (permissions.IsAuthenticated,)
 
 # Create your views here.
 @staff_member_required
