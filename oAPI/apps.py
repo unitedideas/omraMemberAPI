@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class OmapiConfig(AppConfig):
+class OapiConfig(AppConfig):
     name = 'oAPI'
