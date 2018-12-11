@@ -2,3 +2,4 @@
 django-filter==2.0.0
 djangorestframework==3.9.0
 markdown==2.6.11
+django-import-export==1.1.0
