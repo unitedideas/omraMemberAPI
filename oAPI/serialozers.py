@@ -5,4 +5,4 @@ from .models import MemberData
 class MemberDataSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = MemberData
-        fields = ('id', 'url', 'firstName', 'lastName', 'memberNumber')
+        fields = ('id', 'url', 'firstName', 'lastName', 'memberNumber', 'expirationDate')
