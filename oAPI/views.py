@@ -13,7 +13,8 @@ class MemberDataView(viewsets.ModelViewSet):
     filter_backends = (filters.SearchFilter,)  # DjangoFilterBackend
     # filter_fields = ('firstName', 'active')
     search_fields = ('memberNumber', 'lastName', 'active')
-
+# search example:
+# http://localhost:8000/memberdata/?search=cheek
 
 # Create your views here.
 @staff_member_required
