@@ -28,7 +28,7 @@ except ImportError:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['omraapi.pythonanywhere.com']
+ALLOWED_HOSTS = ['omraapi.pythonanywhere.com', 'localhost']
 
 # Application definition
 
@@ -121,6 +121,7 @@ STATIC_ROOT = ''
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = (os.path.join('static'),)
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
