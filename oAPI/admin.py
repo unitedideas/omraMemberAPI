@@ -1,7 +1,10 @@
 from django.contrib import admin
+from .models import MemberData
+from import_export.admin import ImportExportModelAdmin
+
 
 # Register your models here.
 
-from .models import MemberData
-
-admin.site.register(MemberData)
+@admin.register(MemberData)
+class MemberDataView(ImportExportModelAdmin):
+    pass

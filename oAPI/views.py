@@ -1,14 +1,19 @@
 from django.shortcuts import render
 from django.contrib.admin.views.decorators import staff_member_required
-from rest_framework import viewsets, permissions, mixins
+# from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import viewsets, filters
 from .models import MemberData
-from .serialozers import MemberDataSerializer
+from .serializers import MemberDataSerializer
+
 
 class MemberDataView(viewsets.ModelViewSet):
     queryset = MemberData.objects.all()
     serializer_class = MemberDataSerializer
-    lookup_fields = ('firstName', 'lastName', 'memberNumber', 'expirationDate')
-    # permission_classes = (permissions.IsAuthenticated,)
+    lookup_fields = 'memberNumber'
+    filter_backends = (filters.SearchFilter,)  # DjangoFilterBackend
+    # filter_fields = ('firstName', 'active')
+    search_fields = ('memberNumber', 'lastName', 'active')
+
 
 # Create your views here.
 @staff_member_required
