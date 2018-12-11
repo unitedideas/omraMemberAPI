@@ -16,6 +16,7 @@ class MemberDataView(viewsets.ModelViewSet):
 # search example:
 # http://localhost:8000/memberdata/?search=cheek
 
+
 # Create your views here.
 @staff_member_required
 def home(request):
