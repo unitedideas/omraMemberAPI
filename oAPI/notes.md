@@ -43,10 +43,7 @@ the need of manual score entry and score calculations.
         1. Register and Pay on OMRA squarespace site
         2. Data to be added or updated in the DB
         3. Email digital membership card to the new member
-        
     
     Administrators (OMRA Staff):
         1. Enter the race results into database, via interface
-        2. Race results to be add
-        3. Email digital membership card to the new member
-    
+        2. Edit race results if needed    
