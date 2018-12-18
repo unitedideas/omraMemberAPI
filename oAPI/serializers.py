@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from .models import MemberData
+from .models import Rider
 
 
-class MemberDataSerializer(serializers.HyperlinkedModelSerializer):
+class RiderSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = MemberData
+        model = Rider
         fields = ('id', 'url', 'firstName', 'lastName', 'memberNumber', 'expirationDate', 'active')

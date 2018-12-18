@@ -2,13 +2,13 @@ from django.shortcuts import render
 from django.contrib.admin.views.decorators import staff_member_required
 # from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, filters
-from .models import MemberData
-from .serializers import MemberDataSerializer
+from .models import Rider
+from .serializers import RiderSerializer
 
 
-class MemberDataView(viewsets.ModelViewSet):
-    queryset = MemberData.objects.all()
-    serializer_class = MemberDataSerializer
+class RiderView(viewsets.ModelViewSet):
+    queryset = Rider.objects.all()
+    serializer_class = RiderSerializer
     lookup_fields = 'memberNumber'
     filter_backends = (filters.SearchFilter,)  # DjangoFilterBackend
     # filter_fields = ('firstName', 'active')
