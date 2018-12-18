@@ -16,7 +16,7 @@ class Rider(models.Model):
 
 
 class Year(models.Model):
-    year = models.IntegerField(max_length=4)
+    year = models.IntegerField()
 
     def __str__(self):
         return self.year
@@ -52,8 +52,8 @@ class RiderClass(models.Model):
 class Position(models.Model):
     rider_class = models.ForeignKey(RiderClass, on_delete=models.CASCADE)
     rider = models.ForeignKey(Rider, models.CASCADE)
-    position = models.IntegerField(max_length=3)
-    value = models.IntegerField(max_length=3)
+    position = models.IntegerField()
+    value = models.IntegerField()
 
     def __str__(self):
         return self.position + self.value
