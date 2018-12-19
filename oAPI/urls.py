@@ -6,6 +6,6 @@ from rest_framework import routers
 router = routers.DefaultRouter()
 router.register('riderdata', views.RiderView)
 urlpatterns = [
-    # path('', views.home, name='home'),
+    path('member/', views.member, name='member'),
     path('', include(router.urls))
 ]

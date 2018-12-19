@@ -17,9 +17,10 @@ class RiderView(viewsets.ModelViewSet):
 
 # Create your views here.
 @staff_member_required
-def home(request):
+def member(request):
     if request.method == "GET":
         pass
     if request.method == "POST":
         pass
     return render(request, "oAPI/home.html")
+
