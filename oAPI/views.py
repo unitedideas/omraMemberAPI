@@ -1,7 +1,6 @@
 from django.shortcuts import render, HttpResponse
-from django import forms
+from django.template import Context
 from django.contrib.admin.views.decorators import staff_member_required
-# from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, filters
 from .models import Rider
 from .serializers import RiderSerializer
@@ -19,18 +18,19 @@ class RiderView(viewsets.ModelViewSet):
 # Create your views here.
 @staff_member_required
 def member(request):
+    print(request.method)
     if request.method == "GET":
-        # content = {"GET": "GET"}
-        return render(request, "oAPI/member.html")
+        content = {"request": "GET"}
+        return render(request, "oAPI/member.html", content)
     if request.method == "POST":
-        content = "POST"
-        return render(content)
+        content = {"request": "POST"}
+        return render(request, "oAPI/member.html", content)
     if request.method == "PATCH":
-        content = "PATCH"
-        return render(content)
+        content = {"request": "PATCH"}
+        return render(request, "oAPI/member.html", content)
     if request.method == "DELETE":
-        content = "DELETE"
-        return HttpResponse(content)
+        content = {"request": "DELETE"}
+        return render(request, "oAPI/member.html", content)
 
 
 def memberform(request):

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 <head>
+
     {% load static %}
 
     {% block head %}
@@ -9,22 +10,23 @@
 <body>
 
 {% block body %}
-    <h2 style="text-align: center">
-        C
-        <from method="POST" action=".">
-                {% csrf_token %}
-            <button type="submit">Create</button>
-        </from>
-        {#        R#}
-        {#        <button>Remove</button>#}
-        {##}
-        {#        U#}
-        {#        <button>Update</button>#}
-        {##}
-        {#        D#}
-        {#        <button>Delete</button>#}
-    </h2>
-    <div><h2 style="text-align: center">Last request method was a request {{ content }}</h2></div>
+    <div style="text-align: center">
+    <h2>
+       C
+        <form method='post'  style="display: inline-block">
+            {% csrf_token %}
+            <button>Create</button>
+        </form>
+
+        R
+        <form method='get' style="display: inline-block">
+            {% csrf_token %}
+
+            <button>Remove</button>
+        </form>
+        </h2>
+    </div>
+    <div><h2 style="text-align: center">Last request method was a <span style ="color:red">{{ request }}</span> request. </h2></div>
 
 {% endblock %}
 
