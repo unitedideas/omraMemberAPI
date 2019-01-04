@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+<head>
+{% csrf_token %}
+    {% load static %}
+
+    {% block head %}
+        <title>OMRA API Home</title>
+    {% endblock %}
+</head>
+<body>
+
+{% block body %}
+    <div><h2 style="text-align: center"> Last request method was a {{ content }} request</h2></div>
+
+{% endblock %}
+
+</body>

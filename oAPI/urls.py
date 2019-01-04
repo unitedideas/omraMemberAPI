@@ -6,5 +6,6 @@ router = routers.DefaultRouter()
 router.register('riderdata', views.RiderView)
 urlpatterns = [
     path('member/', views.member, name='member'),
+    path('memberform/', views.memberform, name='memberform'),
     path('', include(router.urls))
 ]

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+<head>
+    {% load static %}
+
+    {% block head %}
+        <title>OMRA API Home</title>
+    {% endblock %}
+</head>
+<body>
+
+{% block body %}
+    <h2 style="text-align: center">
+        C
+        <from method="POST" action=".">
+                {% csrf_token %}
+            <button type="submit">Create</button>
+        </from>
+        {#        R#}
+        {#        <button>Remove</button>#}
+        {##}
+        {#        U#}
+        {#        <button>Update</button>#}
+        {##}
+        {#        D#}
+        {#        <button>Delete</button>#}
+    </h2>
+    <div><h2 style="text-align: center">Last request method was a request {{ content }}</h2></div>
+
+{% endblock %}
+
+</body>
